@@ -14,7 +14,7 @@ app.use(bodyParser.json());
 app.use(cors());
 
 // Set up the database connection
-
+mongoose.set("strictQuery", false);
 mongoose.connect(dbUri, { useNewUrlParser: true, useUnifiedTopology: true })
     .then(() => console.log('Connected to MongoDB'))
     .catch(err => console.log(err));
